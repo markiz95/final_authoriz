@@ -26,6 +26,10 @@
               <li><%= link_to 'Facebook', '/auth/facebook' %></li>
               <li><%= link_to 'Vk', '/auth/vkontakte' %></li>
             </ul>
+            <ul class="nav navbar-nav pull-right">
+              <li><%= link_to raw("<span class='glyphicon glyphicon-log-in'></span> Login" ), '/auth/identity' %></li>
+              <li><%= link_to raw('<span class="glyphicon glyphicon-user"></span> Sign Up'), '/auth/identity/register' %></li>
+            </ul>
           <% end %>
         </div>
       </div>

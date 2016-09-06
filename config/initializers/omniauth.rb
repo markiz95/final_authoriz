@@ -12,5 +12,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   provider :facebook, '153356695109014', '4bd7acd3fb51837e3e8e82c002841e8e',
            scope: 'public_profile', info_fields: 'id,name,link'
            #  152904908487526 d3b1786f5cf47bcc726b5739a6edc91d
-
+  provider :identity, on_failed_registration: lambda { |env|
+            IdentitiesController.action(:new).call(env)
+  }
 end
